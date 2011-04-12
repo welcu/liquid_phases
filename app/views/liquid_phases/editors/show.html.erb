@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%= stylesheet_assets(:editor) %>
+    <%= javascript_assets(:editor) %>
+    <%= csrf_meta_tag %>    
+  </head>
+  <body>
+    <%= title %>
+    <nav>
+      <%= link_to 'code', '#code' %>
+      <%= link_to 'split', '#split' %>
+      <%= link_to 'design', '#design' %>
+      <%= link_to 'design', '#preview' %>
+    </nav>
+    <div id="canvas">
+      
+    </div><!-- #canvas -->
+  </body>
+</html>

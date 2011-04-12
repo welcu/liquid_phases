@@ -1,0 +1,10 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.0.4'
+gem 'sqlite3'
+gem 'liquid_phases', :path => '..'
+
+
+gem 'haml'
+gem 'coffee-script'
+gem 'asseter', :git => 'git://github.com/sagmor/asseter.git'
