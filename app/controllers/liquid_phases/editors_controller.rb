@@ -8,6 +8,7 @@ module LiquidPhases
     end
     
     def code
+      render :text => provider.code
     end
     
     def split
@@ -22,6 +23,7 @@ module LiquidPhases
 
     def update
       provider.update(params[:code])
+      render :text => 'OK'
     end
   end
 end

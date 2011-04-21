@@ -3,9 +3,12 @@
 <html>
   <head>
     <title>Phases Code Editor</title>
-    <%= csrf_meta_tag %>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/ckeditor/ckeditor.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/ckeditor/adapters/jquery.js" type="text/javascript"></script>
+    <%= csrf_meta_tag %>
   </head>
   <body>
-    <%= text_area_tag :code, provider.code %>
+    <%= text_area_tag :code, provider.code, :id => 'code_editor_area' %>
   </body>
 </html>

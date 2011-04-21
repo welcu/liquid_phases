@@ -3,6 +3,22 @@
   <head>
     <title><%= title %></title>
     <%= stylesheet_assets(:editor) %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/ckeditor/ckeditor.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/ckeditor/adapters/jquery.js" type="text/javascript"></script>
+    
+    <!-- Code mirror -->
+    <link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="/codemirror/mode/xml/xml.css"> 
+    <link rel="stylesheet" href="/codemirror/mode/css/css.css">
+    <link rel="stylesheet" href="/codemirror/mode/javascript/javascript.css">
+    <script src="/codemirror/lib/codemirror.js"></script> 
+    <script src="/codemirror/lib/overlay.js"></script> 
+    <script src="/codemirror/mode/xml/xml.js"></script>
+    <script src="/codemirror/mode/css/css.js"></script>
+    <script src="/codemirror/mode/javascript/javascript.js"></script>
+    <script src="/codemirror/mode/htmlmixed/htmlmixed.js"></script> 
+    
     <%= javascript_assets(:editor) %>
     <%= csrf_meta_tag %>    
   </head>
@@ -10,12 +26,14 @@
     <%= title %>
     <nav>
       <%= link_to 'code', '#code' %>
+      |
       <%= link_to 'split', '#split' %>
+      |
       <%= link_to 'design', '#design' %>
-      <%= link_to 'design', '#preview' %>
+      |
+      <%= link_to 'preview', '#preview' %>
     </nav>
-    <div id="canvas">
-      
-    </div><!-- #canvas -->
+    <br />
+    <div id="canvas"></div><!-- #canvas -->
   </body>
 </html>
