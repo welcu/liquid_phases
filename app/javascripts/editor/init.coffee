@@ -1,3 +1,3 @@
 $ ->
   phases.provider.init()
-  phases.modes.code.init()
+  phases.modes.design.init()

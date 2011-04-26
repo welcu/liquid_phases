@@ -2,13 +2,10 @@ doc = null
 dirty = true
 
 createDocument = (code) ->
-  iframe = window.document.createElement 'iframe'
-  console.log iframe
-  iframe.src = 'about:blank'
-  iframe.style.display = 'none'
-  $('body').append iframe
-  iframe.contentDocument.write code
-  iframe.contentDocument
+  doc = document.implementation.createHTMLDocument 'Blank'
+  doc.open()
+  doc.write code
+  doc
 
 reloadCode = (async=false) ->
   result = false
@@ -29,16 +26,18 @@ this.phases.provider =
   getDocument: ->
     doc
   getCode: ->
-    '<!DOCTYPE html>\n<html>\n' + $('html', doc).html() + '\n</html>\n'
+    '<!DOCTYPE html>\n' + doc.documentElement.outerHTML
   setCode: (code) ->
     doc.open 'text/html','replace'
     
     # TODO: Sanitize!
     
     doc.write(code)
-    dirty = true
+    phases.provider.setDirty()
   isDirty: ->
     dirty
+  setDirty: ->
+    dirty = true
   save: (async=false) ->
     # return false unless dirty
     
