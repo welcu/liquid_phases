@@ -7,9 +7,8 @@ Rails.application.routes.draw do
     
     member do
       get :code
-      get :split
-      get :design
       get :preview
+      post :upload
     end
   end
 end

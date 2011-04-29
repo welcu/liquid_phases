@@ -3,8 +3,10 @@ dirty = true
 
 createDocument = (code) ->
   doc = document.implementation.createHTMLDocument 'Blank'
-  doc.open()
-  doc.write code
+  # I prefer this way but firefox doesn't like the doc.write approach
+  # doc.open()
+  # doc.write code
+  doc.documentElement.innerHTML = code
   doc
 
 reloadCode = (async=false) ->
@@ -26,13 +28,13 @@ this.phases.provider =
   getDocument: ->
     doc
   getCode: ->
-    '<!DOCTYPE html>\n' + doc.documentElement.outerHTML
+    '<!DOCTYPE html>\n<html>\n' + doc.documentElement.innerHTML + '\n</html>'
   setCode: (code) ->
-    doc.open 'text/html','replace'
-    
     # TODO: Sanitize!
     
-    doc.write(code)
+    #doc.open 'text/html','replace'
+    #doc.write(code)
+    doc.documentElement.innerHTML = code
     phases.provider.setDirty()
   isDirty: ->
     dirty

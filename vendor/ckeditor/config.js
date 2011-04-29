@@ -17,7 +17,7 @@ CKEDITOR.editorConfig = function( config )
       ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
       ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
       ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-      ['Image','Flash','Table','HorizontalRule','SpecialChar','Iframe'],
+      ['Image','Table','HorizontalRule','SpecialChar','Iframe'],
       ['BidiLtr', 'BidiRtl' ],
       '/',
       ['Styles','Format','Font','FontSize'],

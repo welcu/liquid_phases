@@ -14,6 +14,10 @@ class Provider
     }
   end
   
+  def upload(file)
+    '/images/rails.png'
+  end
+  
   protected
     def template
       @template ||= Template.first || Template.create

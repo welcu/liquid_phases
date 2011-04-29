@@ -9,23 +9,59 @@ editTextObject = (event) ->
     contentsCss: []
     toolbar: 'Phases'
     resize_enabled: false
-    extraPlugins: 'autogrow'
+    # extraPlugins: 'autogrow'
+    filebrowserUploadUrl: '/phases/editor/upload'
   
   saveButton = $('<a href="#save" class="phasesSaveButton">Save</a>')
-  saveButton.appendTo '#phasesDialog'
   saveButton.click ->
     $( '#'+id, document ).html editor.val()
     $( '#'+id, provider.getDocument() ).html editor.val()
     provider.setDirty()
     $('body').removeClass 'overlaid'
     false
+  saveButton.appendTo '#phasesDialog'
+
+  closeButton = $('<a href="#close" class="phasesCloseButton">Cancel</a>')
+  closeButton.click ->
+    $('body').removeClass 'overlaid'
+    false
+  closeButton.appendTo '#phasesDialog'
+
   
   $('body').addClass 'overlaid'
   event.stopPropagation()
   false
   
 editImageObject = (event) ->
-  alert 'Image'
+  object = this
+  $('#phasesDialog').html ''
+  form = $ '''
+    <form action="/phases/editor/upload" method="post" enctype="multipart/form-data" target="phasesUploaderTarget">
+      <input type="file" name="upload">
+      <input type="submit" value="Replace">
+    </form>
+  '''
+  
+  target = $ '<iframe style="display: none;" id="phasesUploaderTarget"></iframe>'
+  
+  form.submit ->
+    target.bind 'load', ->
+      url = this.contentWindow.document.body.innerHTML
+      $( '#'+object.id, document ).attr 'src', url
+      $( '#'+object.id, provider.getDocument() ).attr 'src', url
+      provider.setDirty()
+      $('body').removeClass 'overlaid'
+
+  closeButton = $('<a href="#close" class="phasesCloseButton">Cancel</a>')
+  closeButton.click ->
+    $('body').removeClass 'overlaid'
+    false
+
+  form.appendTo '#phasesDialog'
+  target.appendTo '#phasesDialog'
+  closeButton.appendTo '#phasesDialog'
+  $('body').addClass 'overlaid'
+  
   event.stopPropagation()
   false
 
