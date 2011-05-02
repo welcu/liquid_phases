@@ -24,10 +24,9 @@
   </head>
   <body>
     <%= title %>
+    <%= link_to 'Save Changes', '#save', :id => 'saveButton', :style => 'float:right;', :class => 'disabled' %>
     <nav>
       <%= link_to 'code', '#code' %>
-      |
-      <%= link_to 'split', '#split' %>
       |
       <%= link_to 'design', '#design' %>
       |

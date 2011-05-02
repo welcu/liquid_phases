@@ -40,6 +40,7 @@ this.phases.provider =
     dirty
   setDirty: ->
     dirty = true
+    $('#saveButton').removeClass('disabled')
   save: (async=false) ->
     # return false unless dirty
     
@@ -60,5 +61,7 @@ this.phases.provider =
       success: () ->
         result = true
         dirty = false
+        if result
+          $('#saveButton').addClass('disabled')
     result
     

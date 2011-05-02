@@ -8,18 +8,19 @@ editTextObject = (event) ->
   editor.ckeditor
     contentsCss: []
     toolbar: 'Phases'
-    resize_enabled: false
+    resize_enabled: true
     # extraPlugins: 'autogrow'
+    startupFocus: true
     filebrowserUploadUrl: '/phases/editor/upload'
   
-  saveButton = $('<a href="#save" class="phasesSaveButton">Save</a>')
-  saveButton.click ->
+  confirmButton = $('<a href="#confirm" class="phasesConfirmButton">Confirm</a>')
+  confirmButton.click ->
     $( '#'+id, document ).html editor.val()
     $( '#'+id, provider.getDocument() ).html editor.val()
     provider.setDirty()
     $('body').removeClass 'overlaid'
     false
-  saveButton.appendTo '#phasesDialog'
+  confirmButton.appendTo '#phasesDialog'
 
   closeButton = $('<a href="#close" class="phasesCloseButton">Cancel</a>')
   closeButton.click ->

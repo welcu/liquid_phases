@@ -2,6 +2,7 @@ body.overlaid
   -webkit-user-select: none
   -moz-user-select: none
   user-select: none
+  overflow: hidden
 
 body.overlaid div.overlay
   -webkit-transform: translateY(0)
@@ -20,6 +21,7 @@ div.overlay
   top: 0
   left: 0
   background: rgba(255,255,255,0.8)
+  -webkit-transition: background 1s linear
 
   -webkit-user-select: auto
   -moz-user-select: auto
@@ -83,9 +85,8 @@ div.overlay
     box-pack: start
 
 #phasesDialog
-  width: 700px
+  // width: 700px
   background: #fff
-  resize: both
   overflow: auto
 
   -webkit-border-radius: 10px
