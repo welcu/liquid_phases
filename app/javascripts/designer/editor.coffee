@@ -11,7 +11,7 @@ editTextObject = (event) ->
     resize_enabled: true
     # extraPlugins: 'autogrow'
     startupFocus: true
-    filebrowserUploadUrl: '/phases/editor/upload'
+    filebrowserUploadUrl: phases.config.location+'/upload'
   
   confirmButton = $('<a href="#confirm" class="phasesConfirmButton">Confirm</a>')
   confirmButton.click ->
@@ -37,11 +37,12 @@ editImageObject = (event) ->
   object = this
   $('#phasesDialog').html ''
   form = $ '''
-    <form action="/phases/editor/upload" method="post" enctype="multipart/form-data" target="phasesUploaderTarget">
+    <form method="post" enctype="multipart/form-data" target="phasesUploaderTarget">
       <input type="file" name="upload">
       <input type="submit" value="Replace">
     </form>
   '''
+  form.attr 'action', phases.config.location + '/upload'
   
   target = $ '<iframe style="display: none;" id="phasesUploaderTarget"></iframe>'
   

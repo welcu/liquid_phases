@@ -2,18 +2,29 @@ doc = null
 dirty = true
 
 createDocument = (code) ->
-  doc = document.implementation.createHTMLDocument 'Blank'
+  try
+    d = document.implementation.createHTMLDocument 'Blank'
+  catch error
+    # Fall back to iframe method.
+    iframe = document.createElement 'iframe'
+    document.body.appendChild iframe
+    d = iframe.contentDocument
+    document.body.removeChild iframe
+  
+  # console.log doc
+  #  unless doc
+  
   # I prefer this way but firefox doesn't like the doc.write approach
   # doc.open()
   # doc.write code
-  doc.documentElement.innerHTML = code
-  doc
+  d.documentElement.innerHTML = code
+  d
 
 reloadCode = (async=false) ->
   result = false
   jQuery.ajax
     async: async
-    url: '/phases/editor/code'
+    url: phases.config.location + '/code'
     dataType: 'text'
     success: (code) ->
       doc = createDocument(code)
@@ -28,7 +39,11 @@ this.phases.provider =
   getDocument: ->
     doc
   getCode: ->
-    '<!DOCTYPE html>\n<html>\n' + doc.documentElement.innerHTML + '\n</html>'
+    code = '<!DOCTYPE html>\n<html>\n' + doc.documentElement.innerHTML + '\n</html>'
+    code = code.replace /%7B%7B(%20)*/ig, '{{ '
+    code = code.replace /(%20)*%7D%7D/ig, ' }}'
+    code
+    
   setCode: (code) ->
     # TODO: Sanitize!
     
@@ -55,7 +70,7 @@ this.phases.provider =
     result = false
     jQuery.ajax
       async: async
-      url: '/phases/editor'
+      url: phases.config.location
       type: 'POST'
       data: data
       success: () ->
