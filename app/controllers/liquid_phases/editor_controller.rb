@@ -1,5 +1,5 @@
 module LiquidPhases
-  class EditorsController < ApplicationController
+  class EditorController < ApplicationController
     layout false
     include LiquidPhases::ControllerMethods
     
