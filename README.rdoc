@@ -1,0 +1,6 @@
+Liquid Phases
+
+Liquid templates editor
+
+TODO:
+ - Bundle Assets

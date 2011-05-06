@@ -67,6 +67,39 @@ editImageObject = (event) ->
   event.stopPropagation()
   false
 
+editStringObject = (event) ->
+  object = this
+  $('#phasesDialog').html ''
+  form = $ '''
+    <form>
+      <input type="text" id="phasesStringReplacement" size="100">
+      <input type="submit" value="Replace">
+    </form>
+  '''
+  
+  $('#phasesStringReplacement', form).val object.innerHTML
+  
+  form.submit ->
+    new_value = $('#phasesStringReplacement').val()
+    $( '#'+object.id, document ).html new_value
+    $( '#'+object.id, provider.getDocument() ).html new_value
+    provider.setDirty()
+    $('body').removeClass 'overlaid'
+    false
+
+  closeButton = $('<a href="#close" class="phasesCloseButton">Cancel</a>')
+  closeButton.click ->
+    $('body').removeClass 'overlaid'
+    false
+
+  form.appendTo '#phasesDialog'
+  closeButton.appendTo '#phasesDialog'
+  $('body').addClass 'overlaid'
+  
+  event.stopPropagation()
+  false
+
+
 editRemovableObject = (event) ->
   if confirm 'Are you sure?'
     $( '#'+this.id, document ).detach()
@@ -82,6 +115,8 @@ setupEditor = (object) ->
       object.click editTextObject
     when 'image'
       object.click editImageObject
+    when 'string'
+      object.click editStringObject
     when 'remove'
       object.click editRemovableObject
 
