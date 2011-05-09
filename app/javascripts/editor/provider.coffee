@@ -1,24 +1,27 @@
 doc = null
 dirty = true
 
-createDocument = (code) ->
+createDocument = () ->
   try
-    d = document.implementation.createHTMLDocument 'Blank'
+    doc = document.implementation.createHTMLDocument 'Blank'
+    # doc.documentElement.innerHTML = ''
   catch error
     # Fall back to iframe method.
     iframe = document.createElement 'iframe'
     document.body.appendChild iframe
-    d = iframe.contentDocument
+    doc = iframe.contentDocument
     document.body.removeChild iframe
   
-  # console.log doc
-  #  unless doc
+  phases.provider.document = doc
+  doc
+
+writeDocument = (code) ->
+  try
+    doc.documentElement.innerHTML = code
+  catch error
+    doc.body.innerHTML = code
   
-  # I prefer this way but firefox doesn't like the doc.write approach
-  # doc.open()
-  # doc.write code
-  d.documentElement.innerHTML = code
-  d
+  doc
 
 reloadCode = (async=false) ->
   result = false
@@ -27,7 +30,9 @@ reloadCode = (async=false) ->
     url: phases.config.location + '/code'
     dataType: 'text'
     success: (code) ->
-      doc = createDocument(code)
+      createDocument()
+      writeDocument(code)
+      
       result = true
       dirty = false
   result
@@ -45,11 +50,7 @@ this.phases.provider =
     code
     
   setCode: (code) ->
-    # TODO: Sanitize!
-    
-    #doc.open 'text/html','replace'
-    #doc.write(code)
-    doc.documentElement.innerHTML = code
+    writeDocument(code)
     phases.provider.setDirty()
   isDirty: ->
     dirty

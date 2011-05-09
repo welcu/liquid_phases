@@ -8,8 +8,10 @@ body.overlaid div.overlay
   -webkit-transform: translateY(0)
   -moz-transform: translateY(0)
   transform: translateY(0)
+  display: none
 
-div.overlay
+body.overlaid div.overlay
+  display: block
   /* using display none to hide the overlay nullifies -webkit-transition */
   -webkit-transform: translateY(-50000px)
   -moz-transform: translateY(-50000px)
