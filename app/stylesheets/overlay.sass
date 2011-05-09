@@ -4,11 +4,16 @@ body.overlaid
   user-select: none
   overflow: hidden
 
-body.overlaid div.overlay
+div.overlay
   -webkit-transform: translateY(0)
   -moz-transform: translateY(0)
   transform: translateY(0)
   display: none
+  
+  & > div.wrap-outer > div.wrap
+    -webkit-box-pack: start
+    -moz-box-pack: start
+    box-pack: start
 
 body.overlaid div.overlay
   display: block
@@ -73,18 +78,6 @@ body.overlaid div.overlay
         box-flex: 0
 
         display: block
-
-
-
-
-
-/* For this demo. Feel free to customize */
-div.overlay
-  
-  & > div.wrap-outer > div.wrap
-    -webkit-box-pack: start
-    -moz-box-pack: start
-    box-pack: start
 
 #phasesDialog
   // width: 700px
