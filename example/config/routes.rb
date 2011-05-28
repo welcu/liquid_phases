@@ -1,4 +1,4 @@
 Example::Application.routes.draw do
   root :to => redirect('/editor')
-  phases_editor '/editor'
+  mount LiquidPhases::Engine => '/editor'
 end

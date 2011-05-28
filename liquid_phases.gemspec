@@ -22,5 +22,6 @@ Gem::Specification.new do |s|
   
   s.add_runtime_dependency("liquid", '~> 2')
   s.add_runtime_dependency("rails", '~> 3')
+  s.add_runtime_dependency("jquery-rails")
   s.add_development_dependency("rake")
 end
