@@ -109,7 +109,7 @@ editRemovableObject = (event) ->
   false
 
 setupEditor = (object) ->
-  mode = object.data('phases')  
+  mode = object.attr( phases.config.editor_tag )  
   switch mode
     when 'text'
       object.click editTextObject
@@ -120,5 +120,5 @@ setupEditor = (object) ->
     when 'remove'
       object.click editRemovableObject
 
-$('[data-phases]').each ->
+$('[' + phases.config.editor_tag + ']').each ->
   setupEditor $(this)

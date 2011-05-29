@@ -8,7 +8,7 @@ module LiquidPhases
       config = ActiveSupport::OrderedOptions.new
       config.merge!({
         :provider => DEFAULT_PROVIDER_PROC,
-        :data_tag => 'phases'
+        :editor_tag => 'data-phases'
       })
     end
   end
