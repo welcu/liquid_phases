@@ -1,5 +1,5 @@
 module LiquidPhases
-  class Engine < Rails::Engine
+  class Editor < Rails::Engine
     isolate_namespace LiquidPhases
     
     initializer "liquid_phases.add_assets_precompilers" do |app|

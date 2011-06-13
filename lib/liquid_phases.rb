@@ -1,5 +1,5 @@
 require 'liquid_phases/version'
 require 'liquid_phases/config'
-require 'liquid_phases/engine'
+require 'liquid_phases/editor'
 require 'liquid_phases/controller_methods'
 require 'liquid'
