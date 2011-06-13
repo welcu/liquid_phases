@@ -1,4 +1,4 @@
-LiquidPhases::Engine.routes.draw do
+LiquidPhases::Editor.routes.draw do
   get '/'        , :to => 'editor#show', :as => :editor
   put '/'        , :to => 'editor#update', :as => nil
   get '/code'    , :to => 'editor#code', :as => nil
