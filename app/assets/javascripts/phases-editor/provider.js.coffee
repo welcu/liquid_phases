@@ -16,11 +16,7 @@ createDocument = () ->
   doc
 
 writeDocument = (code) ->
-  try
-    doc.documentElement.innerHTML = code
-  catch error
-    doc.body.innerHTML = code
-  
+  doc.body.innerHTML = code
   doc
 
 reloadCode = (async=false) ->
@@ -44,7 +40,7 @@ this.phases.provider =
   getDocument: ->
     doc
   getCode: ->
-    code = '<!DOCTYPE html>\n<html>\n' + doc.documentElement.innerHTML + '\n</html>'
+    code = doc.body.innerHTML
     code = code.replace /%7B%7B(%20)*/ig, '{{ '
     code = code.replace /(%20)*%7D%7D/ig, ' }}'
     code

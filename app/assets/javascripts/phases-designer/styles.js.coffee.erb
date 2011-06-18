@@ -1,7 +1,2 @@
-style = document.createElement('link')
-style.href = '<%= asset_path "phases-designer.css" %>'
-style.rel = "stylesheet"
-style.type = "text/css"
-document.head.appendChild style
-
-$('[' + phases.config.editor_tag + ']').addClass 'phasesEditable'
+jQuery ->
+  $("[#{phases.config.editor_tag}]").addClass 'phasesEditable'

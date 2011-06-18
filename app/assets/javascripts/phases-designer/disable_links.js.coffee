@@ -1,2 +1,3 @@
-$('a').click ->
-  false
+jQuery ->
+  $('a').click ->
+    false

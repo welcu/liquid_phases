@@ -6,9 +6,13 @@ this.phases.modes.design =
     iframe = document.createElement 'iframe'
     iframe.src = 'about:blank'
     $('#canvas').html iframe
-    iframe.contentDocument.write phases.provider.getCode()
-    designer = document.createElement('script')
-    designer.type = 'text/javascript'
-    designer.src = '<%= asset_path "phases-designer.js" %>'
-    iframe.contentDocument.getElementsByTagName('head')[0].appendChild(designer)
-    true
+    iframe.contentDocument.write """
+      <html>
+        <head>
+          <link rel="stylesheet" type="text/css" href="<%= asset_path "phases-designer.css" %>" />
+          <script type="text/javascript" src="<%= asset_path "phases-designer.js" %>"></script>
+        </head>
+        <body>#{ phases.provider.getCode() }</body>
+      </html>
+      """
+    iframe.contentDocument.close()

@@ -120,5 +120,7 @@ setupEditor = (object) ->
     when 'remove'
       object.click editRemovableObject
 
-$('[' + phases.config.editor_tag + ']').each ->
-  setupEditor $(this)
+
+jQuery ->
+  $("[#{phases.config.editor_tag}]").each ->
+    setupEditor $(this)

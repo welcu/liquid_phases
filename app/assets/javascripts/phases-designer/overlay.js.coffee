@@ -9,4 +9,6 @@ overlay = $ '''
   </div>
   '''
 
-overlay.appendTo('body')
+
+jQuery ->
+  overlay.appendTo('body')
