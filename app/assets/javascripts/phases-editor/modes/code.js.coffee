@@ -11,18 +11,19 @@ codeEditorOnLoad = ->
 
 this.phases.modes.code =
 	init: ->
-	  area = document.createElement('textarea')
-	  area.value = phases.provider.getCode()
-	  $('#canvas').html area
-	  firstLoad = true
-	  CodeMirror.fromTextArea area, 
-	    mode: "liquid"
-	    tabMode: "indent"
-	    lineNumbers: true
-	    onChange: (editor) ->
-	      if firstLoad
-	        firstLoad = false
-	      else
-	        phases.provider.setCode editor.getValue()
-	      true
-	  true
+    phases.modes.active = 'code'
+    area = document.createElement('textarea')
+    area.value = phases.provider.getCode()
+    $('#canvas').html area
+    firstLoad = true
+    CodeMirror.fromTextArea area, 
+      mode: "liquid"
+      tabMode: "indent"
+      lineNumbers: true
+      onChange: (editor) ->
+        if firstLoad
+          firstLoad = false
+        else
+          phases.provider.setCode editor.getValue()
+        true
+    true
