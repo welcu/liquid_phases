@@ -1,2 +1,10 @@
+editable = """
+<img src="<%= asset_path 'phases-editable-icon.png' %>" height="12" /> Editable
+"""
 jQuery ->
-  $("[#{phases.config.editor_tag}]").addClass 'phasesEditable'
+  $("[#{phases.config.editor_tag}]")
+    .addClass('phasesEditable')
+    .tipTip
+      defaultPosition: 'right'
+      fadeIn: 0
+      content: editable

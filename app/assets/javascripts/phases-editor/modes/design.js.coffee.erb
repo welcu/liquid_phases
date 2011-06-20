@@ -10,7 +10,7 @@ this.phases.modes.design =
     iframe.contentDocument.write """
       <html>
         <head>
-          <link rel="stylesheet" type="text/css" href="<%= asset_path "phases-designer.css" %>" />
+          <link rel="stylesheet" type="text/css" href="<%= asset_path "phases-designer.css" %>?#{new Date}" />
           <script type="text/javascript" src="<%= asset_path "phases-designer.js" %>"></script>
         </head>
         <body>#{ phases.provider.getCode() }</body>
