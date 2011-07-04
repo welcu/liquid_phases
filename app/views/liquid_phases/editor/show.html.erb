@@ -9,7 +9,11 @@
   <body>
     <%#= title %>
     <%= link_to 'Save Changes', '#save', :id => 'saveButton', :style => 'float:right;', :class => 'disabled' %>
-
+		<style>
+		
+			body {padding:0; margin:0}
+		
+		</style>
     <nav>
       <%= link_to 'code', '#code' %>
       <%= link_to 'design', '#design' %>
