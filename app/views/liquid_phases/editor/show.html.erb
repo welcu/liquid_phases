@@ -7,7 +7,7 @@
     <%= csrf_meta_tag %>    
   </head>
   <body>
-    <div id="liquid_phasesHeader" class="clearfix">
+    <header id="liquid_phasesHeader" class="clearfix">
 	    <%= link_to 'Save Changes', '#save', :id => 'saveButton', :style => 'float:right;', :class => 'disabled' %>
 	    <nav>
 	      <ul class="clearfix">
@@ -16,7 +16,7 @@
 		      <li><%= link_to 'preview', '#preview' %></li>
 				</ul>
 	    </nav>
-		</div>
+		</header>
     <div id="canvas"></div><!-- #canvas -->
   </body>
 </html>
