@@ -8,12 +8,13 @@
   </head>
   <body>
     <div id="liquid_phasesHeader" class="clearfix">
-			<%#= title %>
 	    <%= link_to 'Save Changes', '#save', :id => 'saveButton', :style => 'float:right;', :class => 'disabled' %>
 	    <nav>
-	      <%= link_to 'code', '#code' %>
-	      <%= link_to 'design', '#design' %>
-	      <%= link_to 'preview', '#preview' %>
+	      <ul class="clearfix">
+					<li><%= link_to 'code', '#code' %></li>
+		      <li><%= link_to 'design', '#design' %></li>
+		      <li><%= link_to 'preview', '#preview' %></li>
+				</ul>
 	    </nav>
 		</div>
     <div id="canvas"></div><!-- #canvas -->
