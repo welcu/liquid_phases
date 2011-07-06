@@ -1,0 +1,17 @@
+#canvas { position: fixed; bottom: 0; left: 0; right: 0; top: 34px; border: 0; }
+#canvas iframe { width: 100%; height: 100%; border: 0; margin: 0; }
+.CodeMirror { border: 1px solid #eee; height: auto; }
+
+#liquid_phasesHeader { height: 32px; padding: 0 20px; background-color: #f4f4f4; border-bottom: 1px solid #d8d8d8; }
+
+#liquid_phasesHeader a#saveButton {  }
+
+#liquid_phasesHeader nav { position: relative; bottom: -15px; z-index: 2; width: 199px; height: 32px; margin: 0 auto; }
+#liquid_phasesHeader nav ul li { float: left; }
+#liquid_phasesHeader nav ul li a { display: block; font-weight: bold; width: 65px; height: 22px; padding: 8px 0 0 0; border: 1px solid #d3d4d5; text-align: center; background: #fdfdfd; color: #54558e; }
+#liquid_phasesHeader nav ul li a.current { color: white; background: #b3b3b3; }
+#liquid_phasesHeader nav ul li a:hover { color: #424244; -webkit-transition: 0.4s color }
+#liquid_phasesHeader nav ul li:first-child a { border-right: none; -webkit-border-top-left-radius: 3px;  -webkit-border-bottom-left-radius: 3px;
+-moz-border-radius-topleft: 3px; -moz-border-radius-bottomleft: 3px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
+#liquid_phasesHeader nav ul li:last-child a { border-left: none; -webkit-border-top-right-radius: 3px; -webkit-border-bottom-right-radius: 3px;
+-moz-border-radius-topright: 3px; -moz-border-radius-bottomright: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
