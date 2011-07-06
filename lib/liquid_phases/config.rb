@@ -8,7 +8,8 @@ module LiquidPhases
       config = ActiveSupport::OrderedOptions.new
       config.merge!({
         :provider => DEFAULT_PROVIDER_PROC,
-        :editor_tag => 'data-phases'
+        :editor_tag => 'data-phases',
+        :ckeditor_path => '/ckeditor'
       })
     end
   end

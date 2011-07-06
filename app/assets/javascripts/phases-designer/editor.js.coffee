@@ -11,6 +11,10 @@ editTextObject = (event) ->
     resize_enabled: true
     # extraPlugins: 'autogrow'
     startupFocus: true
+    tabSpaces: 2
+    uiColor: '#F4F4F4'
+    toolbarCanCollapse: false
+
     filebrowserUploadUrl: phases.config.location+'/upload'
   
   confirmButton = $('<a href="#confirm" class="phasesConfirmButton">Confirm</a>')
