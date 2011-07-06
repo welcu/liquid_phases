@@ -5,22 +5,23 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 // Define changes to default configuration here. For example:
 // config.language = 'fr';
-// config.uiColor = '#AADC6E';
+config.uiColor = '#F4F4F4';
 
-CKEDITOR.config.toolbar_Phases = [
-    ['Source','-','Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
-    ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
-    ['Link','Unlink','Anchor'],
-    '/',
-    ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
-    ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
-    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-    ['Image','Table','HorizontalRule','SpecialChar','Iframe'],
-    ['BidiLtr', 'BidiRtl' ],
-    '/',
-    ['Styles','Format','Font','FontSize'],
-    ['TextColor','BGColor'],
-    ['Maximize', 'ShowBlocks','-','About']
+config.toolbar = 'Phases';
+config.toolbarCanCollapse = false;
+config.toolbar_Phases = [
+  ['Cut','Copy','Paste','PasteText','PasteFromWord'],
+  ['Undo','Redo'],
+  ['Link','Unlink'],
+  ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+  ['RemoveFormat'],
+  ['Source','-','About'],
+  '/',
+  ['Bold','Italic','Underline'],
+  ['NumberedList','BulletedList'],
+  ['Image','Table'],
+  ['Format','Font','FontSize'],
+  ['TextColor','BGColor'],
 ];
 
 CKEDITOR.config.customConfig = '';
