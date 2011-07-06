@@ -1,0 +1,99 @@
+body.overlaid {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  overflow: hidden; }
+
+body.overlaid div.overlay {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  transform: translateY(0); }
+
+div.overlay {
+  /* using display none to hide the overlay nullifies -webkit-transition */
+  -webkit-transform: translateY(-50000px);
+  -moz-transform: translateY(-50000px);
+  transform: translateY(-50000px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-transition: background 1s linear;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto; }
+  div.overlay > div.wrap-outer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    box-align: stretch;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center; }
+    div.overlay > div.wrap-outer > div.wrap {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      box-orient: vertical;
+      -webkit-box-align: stretch;
+      -moz-box-align: stretch;
+      box-align: stretch;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      box-pack: center; }
+      div.overlay > div.wrap-outer > div.wrap > * {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        display: block; }
+
+/* For this demo. Feel free to customize */
+div.overlay > div.wrap-outer > div.wrap {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start; }
+
+#phasesDialog {
+  background: white;
+  overflow: auto;
+  -webkit-border-radius: 10px;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 3px 6px black;
+  -moz-box-shadow: 0 3px 6px black;
+  box-shadow: 0 3px 6px black;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e6e6e6));
+  font: 13px "Helvetica";
+  /* for the animation */
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  -moz-transition: -moz-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out; }
+
+body.overlaid #phasesDialog {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  transform: translateY(0); }
+
+.phasesConfirmButton {
+  margin-right: 10px; }
