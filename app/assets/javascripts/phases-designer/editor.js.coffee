@@ -29,6 +29,7 @@ editTextObject = (event) ->
   closeButton = $('<a href="#close" class="phasesCloseButton">Cancel</a>')
   closeButton.click ->
     $('body').removeClass 'overlaid'
+    editor.ckeditorGet().destroy()
     false
   closeButton.appendTo '#phasesDialog'
 
