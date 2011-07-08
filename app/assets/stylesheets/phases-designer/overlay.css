@@ -84,17 +84,12 @@ div.overlay > div.wrap-outer > div.wrap {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e6e6e6));
   font: 13px "Helvetica";
   /* for the animation */
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  transform: translateY(-100%);
   -webkit-transition: -webkit-transform 0.5s ease-out;
   -moz-transition: -moz-transform 0.5s ease-out;
   transition: transform 0.5s ease-out; }
 
 body.overlaid #phasesDialog {
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  transform: translateY(0); }
+}
 
 .phasesConfirmButton {
   margin-right: 10px; }
