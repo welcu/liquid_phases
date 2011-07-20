@@ -12,7 +12,7 @@ module LiquidPhases
     end
     
     def preview
-      render :text => Liquid::Template.parse(provider.code).render(provider.mock)
+      render :text => Liquid::Template.parse(params[:code]).render(provider.mock)
     end
 
     def update
