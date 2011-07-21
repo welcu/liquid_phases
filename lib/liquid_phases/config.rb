@@ -9,6 +9,7 @@ module LiquidPhases
       config.merge!({
         :provider => DEFAULT_PROVIDER_PROC,
         :editor_tag => 'data-phases',
+        :auto_height => true,
         :ckeditor_path => '/ckeditor'
       })
     end

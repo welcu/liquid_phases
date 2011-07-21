@@ -1,7 +1,8 @@
 module LiquidPhases
   class EditorController < ApplicationController
-    layout false
     include LiquidPhases::ControllerMethods
+    skip_before_filter :verify_authenticity_token, :only => [:upload]
+    layout false
     
     # Actions
     def show
