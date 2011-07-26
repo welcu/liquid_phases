@@ -10,7 +10,7 @@ this.phases.modes.preview =
         method="post"
         target="phases_preview"
         style="display:none;">
-        <input type="hidden" name="utf8" value="✓">
+        <input type="hidden" name="utf8" value="">
         <input type="hidden"
                 name="#{ $('meta[name=csrf-param]').attr('content') }"
                 value="#{ $('meta[name="csrf-token"]').attr('content') }">

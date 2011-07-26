@@ -2,7 +2,7 @@ overlay = $ '''
   <div class="overlay">
     <div class="wrap-outer">
       <div class="wrap">
-        <div id="phasesDialog">
+        <div id="phasesDialog" class="clearfix">
         </div>
       </div>
     </div>

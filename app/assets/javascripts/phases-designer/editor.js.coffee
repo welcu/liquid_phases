@@ -17,7 +17,7 @@ editTextObject = (event) ->
 
     filebrowserUploadUrl: phases.config.location+'/upload'
   
-  confirmButton = $('<a href="#confirm" class="phasesConfirmButton">Confirm</a>')
+  confirmButton = $('<a href="#confirm" class="phasesConfirmButton aButton aGreen">Confirm</a>')
   confirmButton.click ->
     $( '#'+id, document ).html editor.val()
     $( '#'+id, provider.getDocument() ).html editor.val()
@@ -26,7 +26,7 @@ editTextObject = (event) ->
     false
   confirmButton.appendTo '#phasesDialog'
 
-  closeButton = $('<a href="#close" class="phasesCloseButton">Cancel</a>')
+  closeButton = $('<a href="#close" class="phasesCloseButton aButton aGray">Cancel</a>')
   closeButton.click ->
     $('body').removeClass 'overlaid'
     editor.ckeditorGet().destroy()
@@ -59,7 +59,7 @@ editImageObject = (event) ->
       provider.setDirty()
       $('body').removeClass 'overlaid'
 
-  closeButton = $('<a href="#close" class="phasesCloseButton">Cancel</a>')
+  closeButton = $('<a href="#close" class="phasesCloseButton aButton aGray">Cancel</a>')
   closeButton.click ->
     $('body').removeClass 'overlaid'
     false
@@ -92,7 +92,7 @@ editStringObject = (event) ->
     $('body').removeClass 'overlaid'
     false
 
-  closeButton = $('<a href="#close" class="phasesCloseButton">Cancel</a>')
+  closeButton = $('<a href="#close" class="phasesCloseButton aButton aGray">Cancel</a>')
   closeButton.click ->
     $('body').removeClass 'overlaid'
     false

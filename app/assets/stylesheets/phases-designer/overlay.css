@@ -1,95 +1,221 @@
+/* @group Reset */
+
+html {
+	-webkit-font-smoothing: antialiased;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+a {
+	text-decoration: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+p {
+	margin: 0 0 12px 0;
+}
+h1, h2, h3, h4, h5, h6, strong { 
+	font-weight: bold; 
+}
+body {
+	font-size: 10pt;
+	font-family: "Helvetica Nue", Arial, Verdana, sans-serif;
+}
+
+/* @end */
+/* @group clear */
+
+.clear { clear: both; height: 0; font-size: 1%; line-height: 0; }
+* html .clearfix {  height: 1%;  overflow: visible; } /* float clearing for IE6 */
+*+html .clearfix {  min-height: 1%; } /* float clearing for IE7 */
+.clearfix:after{  clear: both;  content: ".";   display: block;  height: 0;  visibility: hidden;  font-size: 0; }
+
+/* @end */
+
+
+/* @group buttons fron main.css backstage */
+
+.aButton { display: inline-block; height: 22px; padding: 8px 10px 0 10px; color: white !important; font-weight: bold; text-shadow: rgba(0,0,0,0.2) 0 1px 1px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+
+.aButton_min { display: inline-block; height: 18px; padding: 5px 10px 0 10px; color: white !important; font-weight: bold; text-shadow: rgba(0,0,0,0.2) 0 1px 1px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-size: 9pt !important; text-decoration: none !important; }
+
+.aButton_max { display: inline-block; height: 30px; padding: 13px 20px 0 20px; color: white !important; font-weight: bold; text-shadow: rgba(0,0,0,0.2) 0 1px 1px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-size: 11pt; text-decoration: none !important; }
+
+.aGreen { border: 1px solid #5fa658; background-color: #59c24e;   }
+.aGreen:hover { background-color: #61d355; -webkit-transition: 0.4s background }
+.aGray { border: 1px solid #848689; background-color: #96969b;   }
+.aGray:hover { background-color: #848689; -webkit-transition: 0.4s background }
+.aViolet { border: 1px solid #464783; background-color: #54558e;   }
+.aViolet:hover { background-color: #6768ae; -webkit-transition: 0.4s background }
+
+.withIcon { padding-left: 33px; }
+
+.iconAdd_people { background-image: url(../images/icon/16x16/addPeople.png); background-position: 10px center; background-repeat: no-repeat; }
+.iconAdd_list { background-image: url(../images/icon/16x16/addList.png); background-position: 10px center; background-repeat: no-repeat; }
+.iconAdd_invitation { background-image: url(../images/icon/16x16/addInvitation.png); background-position: 10px center; background-repeat: no-repeat; }
+
+
+/* @end */
+
 body.overlaid {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  overflow: hidden; }
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	overflow: hidden;
+}
 
 body.overlaid div.overlay {
-  display: block;
+	display: block;
 }
 
 div.overlay {
-  display: none;
-  /* using display none to hide the overlay nullifies -webkit-transition */
+	display: none;
+	/*
+
+using display none to hide the overlay nullifies -webkit-transition */
   position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.8);
-  -webkit-transition: background 1s linear;
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  user-select: auto; }
-  div.overlay > div.wrap-outer {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    box-orient: horizontal;
-    -webkit-box-align: stretch;
-    -moz-box-align: stretch;
-    box-align: stretch;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    box-pack: center; }
-    div.overlay > div.wrap-outer > div.wrap {
-      display: -webkit-box;
-      display: -moz-box;
-      display: box;
-      -webkit-box-orient: vertical;
-      -moz-box-orient: vertical;
-      box-orient: vertical;
-      -webkit-box-align: stretch;
-      -moz-box-align: stretch;
-      box-align: stretch;
-      -webkit-box-pack: center;
-      -moz-box-pack: center;
-      box-pack: center; }
-      div.overlay > div.wrap-outer > div.wrap > * {
-        -webkit-box-flex: 0;
-        -moz-box-flex: 0;
-        box-flex: 0;
-        display: block; }
-
-/* For this demo. Feel free to customize */
-div.overlay > div.wrap-outer > div.wrap {
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  box-pack: start; }
-
-#phasesDialog {
-  position: fixed;
-  top: 0;
-  left: 5px;
-  right: 5px;
-  background: white;
-  overflow: auto;
-  -webkit-border-radius: 10px;
-  -webkit-border-top-left-radius: 0;
-  -webkit-border-top-right-radius: 0;
-  -moz-border-radius: 0 0 10px 10px;
-  border-radius: 0 0 10px 10px;
-  padding: 15px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-shadow: 0 3px 6px black;
-  -moz-box-shadow: 0 3px 6px black;
-  box-shadow: 0 3px 6px black;
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e6e6e6));
-  font: 13px "Helvetica";
-  /* for the animation */
-  -webkit-transition: -webkit-transform 0.5s ease-out;
-  -moz-transition: -moz-transform 0.5s ease-out;
-  transition: transform 0.5s ease-out; }
-
-body.overlaid #phasesDialog {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(255, 255, 255, 0.8);
+	-webkit-transition: background 1s linear;
+	-webkit-user-select: auto;
+	-moz-user-select: auto;
+	user-select: auto;
 }
 
-.phasesConfirmButton {
-  margin-right: 10px; }
+div.overlay > div.wrap-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-align: stretch;
+	-moz-box-align: stretch;
+	box-align: stretch;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	box-pack: center;
+}
+
+div.overlay > div.wrap-outer > div.wrap {
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-box-align: stretch;
+	-moz-box-align: stretch;
+	box-align: stretch;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	box-pack: center;
+}
+
+div.overlay > div.wrap-outer > div.wrap > * {
+	-webkit-box-flex: 0;
+	-moz-box-flex: 0;
+	box-flex: 0;
+	display: block;
+}
+
+/* For this demo. Feel free to customize */
+
+div.overlay > div.wrap-outer > div.wrap {
+	-webkit-box-pack: start;
+	-moz-box-pack: start;
+	box-pack: start;
+}
+
+#phasesDialog {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	overflow: auto;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-size: 10pt;
+	border: 1px solid #d8d8d8;
+
+	background-color: #f4f4f4;
+
+	/* for the animation */
+  	-webkit-transition: -webkit-transform 0.5s ease-out;
+	-moz-transition: -moz-transform 0.5s ease-out;
+	transition: transform 0.5s ease-out;
+}
+
+#phasesDialog .cke_skin_kama {
+	padding: 0;
+	border: none;
+	margin-bottom: 10px;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.cke_browser_webkit { background: #d3d3d3 !important; padding: 10px !important; }
+.cke_browser_webkit .cke_wrapper { padding: 0 !important; -moz-border-radius: 0 !important; -webkit-border-radius: 0 !important; border-radius: 0 !important; background: none !important; }
+.cke_browser_webkit .cke_wrapper table { background: #d3d3d3 !important; }
+
+#phasesDialog a.phasesConfirmButton,
+#phasesDialog a.phasesCloseButton {
+	float: right;
+}
+
+#phasesDialog a.phasesConfirmButton { margin: 0 0 0 10px; }
+
+#phasesDialog textarea {
+	border: none !important;
+	padding: 0 !important;
+}
+
+
