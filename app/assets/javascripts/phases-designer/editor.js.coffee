@@ -35,6 +35,19 @@ editTextObject = (event) ->
 
   
   $('body').addClass 'overlaid'
+
+  max_top = ->
+    elem_top = $(event.srcElement).offset().top - $('#phasesDialog').height() - 50
+    min_top = 50
+    if elem_top > min_top
+      elem_top
+    else
+      min_top
+  
+  $('#phasesDialog').css
+    position: 'absolute'
+    top: max_top()
+
   event.stopPropagation()
   false
   
@@ -48,7 +61,7 @@ editImageObject = (event) ->
     </form>
   '''
   form.attr 'action', phases.config.location + '/upload'
-  
+
   target = $ '<iframe style="display: none;" id="phasesUploaderTarget"></iframe>'
   
   form.submit ->
@@ -68,6 +81,18 @@ editImageObject = (event) ->
   target.appendTo '#phasesDialog'
   closeButton.appendTo '#phasesDialog'
   $('body').addClass 'overlaid'
+
+  max_top = ->
+    elem_top = $(event.srcElement).offset().top - $('#phasesDialog').height() - 50
+    min_top = 50
+    if elem_top > min_top
+      elem_top
+    else
+      min_top
+  
+  $('#phasesDialog').css
+    position: 'absolute'
+    top: max_top()
   
   event.stopPropagation()
   false
@@ -100,6 +125,18 @@ editStringObject = (event) ->
   form.appendTo '#phasesDialog'
   closeButton.appendTo '#phasesDialog'
   $('body').addClass 'overlaid'
+
+  max_top = ->
+    elem_top = $(event.srcElement).offset().top - $('#phasesDialog').height() - 50
+    min_top = 50
+    if elem_top > min_top
+      elem_top
+    else
+      min_top
+  
+  $('#phasesDialog').css
+    position: 'absolute'
+    top: max_top()
   
   event.stopPropagation()
   false
