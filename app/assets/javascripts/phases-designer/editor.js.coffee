@@ -36,18 +36,6 @@ editTextObject = (event) ->
   
   $('body').addClass 'overlaid'
 
-  max_top = ->
-    elem_top = $(event.srcElement).offset().top - $('#phasesDialog').height() - 50
-    min_top = 50
-    if elem_top > min_top
-      elem_top
-    else
-      min_top
-  
-  $('#phasesDialog').css
-    position: 'absolute'
-    top: max_top()
-
   event.stopPropagation()
   false
   
