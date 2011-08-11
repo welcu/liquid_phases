@@ -37,6 +37,11 @@ editTextObject = (event) ->
   $('body').addClass 'overlaid'
 
   event.stopPropagation()
+
+  $('#phasesDialog').css
+    position: 'absolute'
+    top: '50px'
+
   false
   
 editImageObject = (event) ->
