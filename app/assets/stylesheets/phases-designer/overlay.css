@@ -1,9 +1,10 @@
+div.overlay {
+	font-size: 10pt;
+	font-family: "Helvetica Nue", Arial, Verdana, sans-serif;
+
 /* @group Reset */
 
-html {
-	-webkit-font-smoothing: antialiased;
-}
-html, body, div, span, applet, object, iframe,
+div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -54,10 +55,6 @@ p {
 h1, h2, h3, h4, h5, h6, strong { 
 	font-weight: bold; 
 }
-body {
-	font-size: 10pt;
-	font-family: "Helvetica Nue", Arial, Verdana, sans-serif;
-}
 
 /* @end */
 /* @group clear */
@@ -68,6 +65,7 @@ body {
 .clearfix:after{  clear: both;  content: ".";   display: block;  height: 0;  visibility: hidden;  font-size: 0; }
 
 /* @end */
+}
 
 
 /* @group buttons fron main.css backstage */
