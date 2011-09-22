@@ -34,7 +34,8 @@ reloadCode = (async=false) ->
   result
 
 this.phases ||= {}
-this.phases.provider =
+
+this.phases.provider = 
   init: ->
     reloadCode()  
   getDocument: ->
@@ -44,7 +45,9 @@ this.phases.provider =
     code = code.replace /%7B%7B(%20)*/ig, '{{ '
     code = code.replace /(%20)*%7D%7D/ig, ' }}'
     code
-    
+  fixIds: ->
+    $("[#{phases.config.editor_tag}]", doc).each ->
+      this.id = _.uniqueId('editable_') unless this.id
   setCode: (code) ->
     writeDocument(code)
     phases.provider.setDirty()
@@ -55,15 +58,15 @@ this.phases.provider =
     $('#saveButton').removeClass('disabled')
   save: (async=false) ->
     # return false unless dirty
-    
+
     csrf_token = $('meta[name=csrf-token]').attr('content')
     csrf_param = $('meta[name=csrf-param]').attr('content')
-    
+
     data = 
       _method: 'PUT'
       code: phases.provider.getCode()
     data[csrf_param] = csrf_token
-    
+
     result = false
     jQuery.ajax
       async: async
@@ -76,4 +79,3 @@ this.phases.provider =
         if result
           $('#saveButton').addClass('disabled')
     result
-    

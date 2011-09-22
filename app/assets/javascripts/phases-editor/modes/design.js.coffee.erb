@@ -3,6 +3,7 @@ this.phases.modes ||= {}
 
 this.phases.modes.design =
   init: ->
+    phases.provider.fixIds()
     phases.modes.active = 'design'
     iframe = document.createElement 'iframe'
     iframe.src = 'about:blank'
