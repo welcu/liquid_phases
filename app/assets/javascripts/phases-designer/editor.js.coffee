@@ -6,13 +6,10 @@ editTextObject = (event) ->
   editor.val $(this).html()
   $('#phasesDialog').html editor
   editor.ckeditor
-    contentsCss: []
     toolbar: 'Phases'
     resize_enabled: true
     # extraPlugins: 'autogrow'
     startupFocus: true
-    tabSpaces: 2
-    uiColor: '#F4F4F4'
     toolbarCanCollapse: false
 
     filebrowserUploadUrl: phases.config.location+'/upload'

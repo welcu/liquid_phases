@@ -65,16 +65,13 @@ h1, h2, h3, h4, h5, h6, strong {
 .clearfix:after{  clear: both;  content: ".";   display: block;  height: 0;  visibility: hidden;  font-size: 0; }
 
 /* @end */
-}
-
 
 /* @group buttons fron main.css backstage */
 
-.aButton { display: inline-block; height: 22px; padding: 8px 10px 0 10px; color: white !important; font-weight: bold; text-shadow: rgba(0,0,0,0.2) 0 1px 1px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+.aButton { text-decoration:none; line-height:normal; display: inline-block; height: 24px; padding: 8px 10px 0 10px; color: white !important; font-weight: bold; text-shadow: rgba(0,0,0,0.2) 0 1px 1px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+.aButton_min { text-decoration:none; line-height:normal; display: inline-block; height: 18px; padding: 5px 10px 0 10px; color: white !important; font-weight: bold; text-shadow: rgba(0,0,0,0.2) 0 1px 1px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-size: 9pt !important; text-decoration: none !important; }
+.aButton_max { text-decoration:none; line-height:normal; display: inline-block; height: 30px; padding: 13px 20px 0 20px; color: white !important; font-weight: bold; text-shadow: rgba(0,0,0,0.2) 0 1px 1px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-size: 11pt; text-decoration: none !important; }
 
-.aButton_min { display: inline-block; height: 18px; padding: 5px 10px 0 10px; color: white !important; font-weight: bold; text-shadow: rgba(0,0,0,0.2) 0 1px 1px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-size: 9pt !important; text-decoration: none !important; }
-
-.aButton_max { display: inline-block; height: 30px; padding: 13px 20px 0 20px; color: white !important; font-weight: bold; text-shadow: rgba(0,0,0,0.2) 0 1px 1px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-size: 11pt; text-decoration: none !important; }
 
 .aGreen { border: 1px solid #5fa658; background-color: #59c24e;   }
 .aGreen:hover { background-color: #61d355; -webkit-transition: 0.4s background }
