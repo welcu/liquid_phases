@@ -21,7 +21,7 @@ CKEDITOR.editorConfig = function( config )
     ['NumberedList','BulletedList'],
     ['Image','Table'],
     ['Format','Font','FontSize'],
-    ['TextColor','BGColor']
+    ['TextColor']
   ];
 
 	config.tabSpaces = 4;
