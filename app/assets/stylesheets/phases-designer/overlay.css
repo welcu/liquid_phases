@@ -1,6 +1,7 @@
 div.overlay {
 	font-size: 10pt;
 	font-family: "Helvetica Nue", Arial, Verdana, sans-serif;
+}
 
 /* @group Reset */
 
@@ -65,7 +66,6 @@ h1, h2, h3, h4, h5, h6, strong {
 .clearfix:after{  clear: both;  content: ".";   display: block;  height: 0;  visibility: hidden;  font-size: 0; }
 
 /* @end */
-}
 
 /* @group buttons fron main.css backstage */
 
