@@ -8,8 +8,9 @@ check_height = ->
   if iframe
     try
       height = $('body', iframe.contentDocument || iframe.contentWindow.document ).contents('*:visible').height()
+      return unless height
       # height = iframe.contentDocument.height
-      if height > last_check + THRESHOLD || hight < last_check - THRESHOLD
+      if height > last_check + THRESHOLD || height < last_check - THRESHOLD
         $(iframe).css 'height', "#{ height }px"
     catch e
       console.log 'Error'
