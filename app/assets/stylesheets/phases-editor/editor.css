@@ -2,7 +2,7 @@
   overflow: visible;
   height: auto;
   margin: 5px 0 52px 0;
-  border:; 0;
+  border: 0;
 }
 #canvas iframe { width: 100%; height: 99%; border: 0; margin: 0; }
 .CodeMirror { border: 1px solid #eee; height: 99%; width: 99%; }

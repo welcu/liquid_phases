@@ -21,11 +21,6 @@ check_height = ->
       console.log 'Error'
       clearInterval interval
       $(iframe).css 'overflow-y', 'auto'
-      
-  h = _( $('#canvas').contents('*:visible') ).reduce (m,e) ->
-      m + $(e).height()
-    , 0
-  $('#canvas').css 'height', "#{ h }px"
     
 	  
 
