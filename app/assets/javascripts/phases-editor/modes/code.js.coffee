@@ -18,8 +18,10 @@ this.phases.modes.code =
     firstLoad = true
     CodeMirror.fromTextArea area, 
       mode: "liquid"
-      tabMode: "indent"
+      tabMode: "indent" 
       lineNumbers: true
+      lineWrapping: true
+      tabSize: 2
       onChange: (editor) ->
         if firstLoad
           firstLoad = false

@@ -1,5 +1,5 @@
 //= require ./lib/codemirror
-//= require ./lib/overlay
+//= require ./lib/util/overlay
 //= require ./mode/xml/xml
 //= require ./mode/css/css
 //= require ./mode/javascript/javascript

@@ -1,7 +1,7 @@
 /*
 *= require_self
 *= require ./lib/codemirror
-*= require ./mode/xml/xml
-*= require ./mode/css/css
-*= require ./mode/javascript/javascript
+* require ./mode/xml/xml
+* require ./mode/css/css
+* require ./mode/javascript/javascript
 */
