@@ -7,7 +7,11 @@ check_height = ->
   iframe = $('#canvas > iframe')[0]
   if iframe
     try
-      height = $('body', iframe.contentDocument || iframe.contentWindow.document ).contents('*:visible').height()
+      height = _( 
+        $('body', iframe.contentDocument || iframe.contentWindow.document ).contents('*:visible')
+      ).reduce (m,e) -> 
+          m + $(e).height()
+        , 0
       return unless height
       # height = iframe.contentDocument.height
       if height > last_check + THRESHOLD || height < last_check - THRESHOLD
