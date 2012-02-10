@@ -7,8 +7,10 @@ this.phases.modes.design =
     phases.modes.active = 'design'
     iframe = document.createElement 'iframe'
     iframe.src = 'about:blank'
+    $(iframe).css 'overflow', "hidden"
+    iframe.style
     $('#canvas').html iframe
-    iframe.contentDocument.write """
+    (iframe.contentDocument || iframe.contentWindow.document).write """
       <html>
         <head>
           <link rel="stylesheet" type="text/css" href="<%= asset_path "phases-designer.css" %>" />

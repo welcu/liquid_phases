@@ -21,5 +21,7 @@ check_height = ->
     catch e
       console.log 'Error'
       clearInterval interval
+      $(iframe).css 'overflow-y', 'auto'
+	  
 
 interval = setInterval check_height, 500
