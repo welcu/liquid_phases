@@ -17,11 +17,16 @@ check_height = ->
       if height > last_check + THRESHOLD || height < last_check - THRESHOLD
         last_check = height
         $(iframe).css 'height', "#{ height + THRESHOLD }px"
-        $('#canvas').css 'height', "#{ height + THRESHOLD }px"
     catch e
       console.log 'Error'
       clearInterval interval
       $(iframe).css 'overflow-y', 'auto'
+      
+  h = _( $('#canvas').contents('*:visible') ).reduce (m,e) ->
+      m + $(e).height()
+    , 0
+  $('#canvas').css 'height', "#{ h }px"
+    
 	  
 
 interval = setInterval check_height, 500
