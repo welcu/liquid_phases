@@ -10,7 +10,7 @@ check_height = ->
       height = _( 
         $('body', iframe.contentDocument || iframe.contentWindow.document )
           .css('overflow-y', 'hidden')
-          .contents('*:visible')
+          .contents('*:visible').not(".overlay")
       ).reduce (m,e) -> 
           m + $(e).height()
         , 0
