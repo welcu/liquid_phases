@@ -16,9 +16,9 @@ check_height = ->
         , 0
       return unless height
       # height = iframe.contentDocument.height
-      if height > last_check + THRESHOLD || height < last_check - THRESHOLD
-        last_check = height
-        $(iframe).css 'height', "#{ height + THRESHOLD }px"
+      # if height > last_check + THRESHOLD || height < last_check - THRESHOLD
+        # last_check = height
+      $(iframe).css 'height', "#{ height + THRESHOLD*2 }px"
     catch e
       console.log 'Error'
       clearInterval interval
