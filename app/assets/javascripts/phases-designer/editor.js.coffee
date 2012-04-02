@@ -52,7 +52,7 @@ editImageObject = (event) ->
   '''
   form.attr 'action', phases.config.location + '/upload'
 
-  target = $ '<iframe style="display: none; width: 1%;" id="phasesUploaderTarget" name="phasesUploaderTarget"></iframe>'
+  target = $ '<iframe style="display: none;" id="phasesUploaderTarget" name="phasesUploaderTarget"></iframe>'
   
   form.submit ->
     target.bind 'load', ->
