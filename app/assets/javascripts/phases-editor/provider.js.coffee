@@ -56,7 +56,7 @@ this.phases.provider =
   setDirty: ->
     dirty = true
     $('#saveButton').removeClass('disabled')
-  save: (async=false) ->
+  save: (async=false, callback = null) ->
     # return false unless dirty
 
     csrf_token = $('meta[name=csrf-token]').attr('content')
@@ -78,4 +78,7 @@ this.phases.provider =
         dirty = false
         if result
           $('#saveButton').addClass('disabled')
+          
+        console.log 'triggering callback'
+        callback?()
     result
