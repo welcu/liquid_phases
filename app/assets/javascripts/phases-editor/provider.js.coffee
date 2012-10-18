@@ -56,6 +56,7 @@ this.phases.provider =
   setDirty: ->
     dirty = true
     $('#saveButton').removeClass('disabled')
+    window.parent.formChanged?()
   save: (async=false, callback = null) ->
     # return false unless dirty
 
